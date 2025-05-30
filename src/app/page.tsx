@@ -1,11 +1,18 @@
+import About from "@/components/About";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Projects from "@/components/Projects";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white">
-      <Hero />
-      <Projects />
-    </main>
+    <div className="relative min-h-screen">
+      <div className="absolute inset-0 bg-[url('/images/bg-textura.png')] bg-repeat bg-center bg-fixed opacity-10 pointer-events-none z-0" />
+      <main className="relative z-10">
+        <Hero />
+        <Projects />
+        <About />
+        <Footer />
+      </main>
+    </div>
   );
 }

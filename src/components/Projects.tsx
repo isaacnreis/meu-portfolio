@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 type Project = {
   title: string;
@@ -99,9 +100,14 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-24 px-6 max-w-5xl mx-auto relative">
-      <h2 className="text-3xl font-bold text-center mb-12">
+      <motion.h2
+        className="text-3xl font-bold text-center mb-12"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
         Projetos em Destaque
-      </h2>
+      </motion.h2>
 
       <div
         className="relative transition-all duration-700 ease-in-out overflow-hidden"
@@ -128,8 +134,22 @@ export default function Projects() {
                 />
               )}
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-zinc-400">{project.description}</p>
+                <motion.h3
+                  className="text-xl font-semibold mb-2"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {project.title}
+                </motion.h3>
+                <motion.p
+                  className="text-zinc-400"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.1, duration: 0.4 }}
+                >
+                  {project.description}
+                </motion.p>
                 <div className="flex gap-4 mt-4">
                   <a
                     href={project.link}
@@ -156,7 +176,7 @@ export default function Projects() {
         </div>
 
         {!showAll && (
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-950 via-zinc-950/80 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-fundoPersonalizado via-fundoPersonalizado/80 to-transparent pointer-events-none" />
         )}
       </div>
 
@@ -177,12 +197,24 @@ export default function Projects() {
       </div>
 
       <article className="mt-20 text-center text-zinc-300 max-w-3xl mx-auto">
-        <h3 className="text-2xl font-bold mb-4">Explore mais no GitHub</h3>
-        <p className="mt-4">
+        <motion.h3
+          className="text-2xl font-bold mb-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          Explore mais no GitHub
+        </motion.h3>
+        <motion.p
+          className="mt-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.1, duration: 0.4 }}
+        >
           Você pode ver esses e outros projetos no meu GitHub. Sinta-se à
           vontade para explorar, clonar, e contribuir. Estou sempre
           desenvolvendo algo novo!
-        </p>
+        </motion.p>
         <a
           href="https://github.com/isaacnreis"
           target="_blank"
