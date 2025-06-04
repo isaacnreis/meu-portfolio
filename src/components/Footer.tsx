@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="w-full py-6 px-4 bg-zinc-200 dark:bg-zinc-800 text-center">
       <p className="text-sm text-zinc-700 dark:text-zinc-300">
-        &copy; {new Date().getFullYear()} Isaac Reis. Todos os direitos
+        &copy; {new Date().getFullYear()} Isaac N. Reis. Todos os direitos
         reservados.
       </p>
       <div className="mt-2 text-sm">
